@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <title>Fund me app</title>
+  </head>
+  <body>
+    <script>
+      async function connect() {
+        if (typeof window.ethereum !== "undefined") {
+          await window.ethereum.request({ method: "eth_requestAccounts" });
+          document.getElementById("connectButton").innerHTML = "Connected";
+          console.log("Metamask is connected");
+        } else {
+          console.log("Please install  MetaMask!");
+        }
+      }
+    </script>
+
+    <button id="connectButton" onclick="connect()">Connect</button>
+  </body>
 </html>
