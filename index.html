@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Fund me app</title>
-  </head>
-  <body>
-    <script>
-      async function connect() {
-        if (typeof window.ethereum !== "undefined") {
-          await window.ethereum.request({ method: "eth_requestAccounts" });
-          document.getElementById("connectButton").innerHTML = "Connected";
-          console.log("Metamask is connected");
-        } else {
-          console.log("Please install  MetaMask!");
-        }
-      }
-    </script>
-
-    <button id="connectButton" onclick="connect()">Connect</button>
-  </body>
+    <head>
+        <title>Fund me app</title>
+    </head>
+    <body>
+        <script src="./index.js" type="module"></script>
+        <button id="connectButton">Connect</button>
+        <button id="balanceButton">Get Balance</button>
+        <button id="withdrawButton">Withdraw</button>
+        <button id="fundButton">Fund</button>
+        <label for="fund">ETH amount</label>
+        <input id="ethAmount" placeholder="0.1" />
+    </body>
 </html>
